@@ -7,12 +7,17 @@ RSpec.describe "directors index page", type: :feature do
 
     visit "/directors"
 
-    expect(page).to have_content(dir_1.name)
-    expect(page).to have_content(dir_1.age)
-    expect(page).to have_content(dir_1.city)
-    expect(page).to have_content(dir_2.name)
-    expect(page).to have_content(dir_2.age)
-    expect(page).to have_content(dir_2.city)
+    within "#director-#{dir_1.id}" do
+      expect(page).to have_content(dir_1.name)
+      expect(page).to have_content(dir_1.age)
+      expect(page).to have_content(dir_1.city)
+    end
+
+    within "#director-#{dir_2.id}" do
+      expect(page).to have_content(dir_2.name)
+      expect(page).to have_content(dir_2.age)
+      expect(page).to have_content(dir_2.city)
+    end
   end
 end
 
