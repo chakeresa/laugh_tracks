@@ -1,1 +1,7 @@
-<br>
+<h1>All Game of Thrones Episode Directors</h1>
+
+<% @directors.each do |director| %>
+ <h2><%= director.name %></h2>
+ <p><%= director.age %></p>
+ <p><%= director.city %></p>
+<% end %>
