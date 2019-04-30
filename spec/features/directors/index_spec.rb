@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "directors index page", type: :feature do
   it "user can see all directors" do
     dir_1 = Director.create(name: "Bob Director", age: 50, city: "Chicago, IL")
-    dir_1 = Director.create(name: "Susan Blah", age: 42, city: "Los Angeles, CA")
+    dir_2 = Director.create(name: "Susan Blah", age: 42, city: "Los Angeles, CA")
 
     visit "/directors"
 
