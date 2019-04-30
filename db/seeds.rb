@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Director.destroy_all
+
+Director.create(name: "Tim Van Patten", age: 59, city: "Brooklyn, NY, USA")
+Director.create(name: "Brian Kirk", age: 50, city: "Armagh, Northern Ireland, UK")
+Director.create(name: "Alan Taylor", age: 59, city: "Brooklyn, NY, USA")
