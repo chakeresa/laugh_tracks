@@ -2,6 +2,7 @@
 
 <% @directors.each do |director| %>
  <div id="director-<%= director.id %>">
+   <img src="<%= director.thumbnail %>" alt="<%= director.name %> thumbnail">
    <h2><%= director.name %></h2>
    <p><%= director.age %></p>
    <p><%= director.city %></p>

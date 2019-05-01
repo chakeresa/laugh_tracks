@@ -51,15 +51,6 @@ RSpec.describe "directors index page", type: :feature do
     within "#director-#{@dir_2.id}" do
       expect(page).to have_xpath("//img[@src='#{@dir_2.thumbnail}']")
     end
-
-    #     User Story 3
-    #
-    # As a visitor
-    # When I visit `/comedians`
-    # I see a thumbnail image for each comedian
-    #
-    # - Image locations (URLs) can be stored in the database as a string.
-    # - Use the image URLs from IMDB or other online source for the special
     # - Use CSS styling to scale the image smaller if needed to fit on the page
   end
 end
