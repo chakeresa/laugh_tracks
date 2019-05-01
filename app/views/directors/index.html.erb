@@ -5,5 +5,12 @@
    <h2><%= director.name %></h2>
    <p><%= director.age %></p>
    <p><%= director.city %></p>
+
+   <% director.episodes.each do |episode| %>
+    <div id="episode-<%= episode.id %>">
+      <h3><%= episode.title %></h3>
+      <p><%= episode.viewers %> million viewers</p>
+    </div>
+   <% end %>
  </div>
 <% end %>
