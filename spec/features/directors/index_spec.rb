@@ -51,6 +51,5 @@ RSpec.describe "directors index page", type: :feature do
     within "#director-#{@dir_2.id}" do
       expect(page).to have_xpath("//img[@src='#{@dir_2.thumbnail}']")
     end
-    # - Use CSS styling to scale the image smaller if needed to fit on the page
   end
 end
