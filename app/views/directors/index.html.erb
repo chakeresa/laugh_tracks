@@ -1,13 +1,14 @@
 <h1>All Game of Thrones Episode Directors</h1>
 
 <% @directors.each do |director| %>
- <div id="director-<%= director.id %>">
+ <div class="director-card" id="director-<%= director.id %>">
+   <img class="director-thumbnail" src="<%= director.thumbnail %>" alt="<%= director.name %> thumbnail"/>
    <h2><%= director.name %></h2>
    <p><%= director.age %></p>
    <p><%= director.city %></p>
 
    <% director.episodes.each do |episode| %>
-    <div id="episode-<%= episode.id %>">
+    <div class="episode-card" id="episode-<%= episode.id %>">
       <h3><%= episode.title %></h3>
       <p><%= episode.viewers %> million viewers</p>
     </div>

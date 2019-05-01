@@ -9,9 +9,9 @@
 Episode.destroy_all
 Director.destroy_all
 
-tim_van_p = Director.create(name: "Tim Van Patten", age: 59, city: "Brooklyn, NY, USA")
-brian_kirk = Director.create(name: "Brian Kirk", age: 50, city: "Armagh, Northern Ireland, UK")
-alan_taylor = Director.create(name: "Alan Taylor", age: 59, city: "Brooklyn, NY, USA")
+tim_van_p = Director.create(name: "Tim Van Patten", age: 59, city: "Brooklyn, NY, USA", thumbnail: "https://resizing.flixster.com/QznwomaCPPn2qLY4qGQhpkkv95s=/679x605/v1.cjs0MzE2MjtqOzE4MDQ1OzEyMDA7Njc5OzYwNQ")
+brian_kirk = Director.create(name: "Brian Kirk", age: 50, city: "Armagh, Northern Ireland, UK", thumbnail: "https://thefilmstage.com/wp-content/uploads/2012/02/Brian-Kirk-to-Direct-Thor-2-300x218.jpg")
+alan_taylor = Director.create(name: "Alan Taylor", age: 59, city: "Brooklyn, NY, USA", thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Alan_Taylor_2013_crop.jpg/440px-Alan_Taylor_2013_crop.jpg")
 
 tim_van_p.episodes.create(title: "Winter is Coming", viewers: 2)
 tim_van_p.episodes.create(title: "The Kingsroad", viewers: 2)
