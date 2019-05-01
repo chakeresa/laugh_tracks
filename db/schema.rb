@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190501190036) do
+ActiveRecord::Schema.define(version: 20190501204547) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,9 @@ ActiveRecord::Schema.define(version: 20190501190036) do
     t.integer "viewers"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "director_id"
+    t.index ["director_id"], name: "index_episodes_on_director_id"
   end
 
+  add_foreign_key "episodes", "directors"
 end
