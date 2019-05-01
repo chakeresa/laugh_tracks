@@ -45,11 +45,11 @@ RSpec.describe "directors index page", type: :feature do
     visit "/directors"
 
     within "#director-#{@dir_1.id}" do
-      expect(page).to have_xpath("//img[@src='#{dir_1.thumbnail}']")
+      expect(page).to have_xpath("//img[@src='#{@dir_1.thumbnail}']")
     end
 
     within "#director-#{@dir_2.id}" do
-      expect(page).to have_xpath("//img[@src='#{dir_2.thumbnail}']")
+      expect(page).to have_xpath("//img[@src='#{@dir_2.thumbnail}']")
     end
 
     #     User Story 3
