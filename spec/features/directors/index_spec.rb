@@ -102,16 +102,6 @@ RSpec.describe "directors index page", type: :feature do
     end
   end
 
-  # User Story 6
-  #
-  # As a visitor
-  # When I visit `/comedians/new`
-  # Then I see a form to input a new comedian into the database
-  # Including fields for their name, age and city.
-  # When the form is successfully submitted and saved,
-  # Then I am redirected to `/comedians`
-  # And I see the new comedian's data on the page.
-
 
   # User Story 7
   #
