@@ -12,7 +12,7 @@
         <p class="card-text"><%= director.city %></p>
 
         <% if director.episodes.count > 0 %>
-          <h5 class="episode-label">Episodes:</h5>
+          <h5 class="episode-label">Episodes (<%= director.episodes.count %>):</h5>
         <% end %>
 
         <% director.episodes.each do |episode| %>
