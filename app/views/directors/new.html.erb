@@ -1,0 +1,16 @@
+<% if @failed %>
+  <p>Failed to create new director. Try again.</p>
+<% end %>
+
+<%= form_for Director.new do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label :age %>
+  <%= f.text_field :age %>
+  <br>
+  <%= f.label :city %>
+  <%= f.text_field :city %>
+  <br>
+  <%= f.submit %>
+<% end %>

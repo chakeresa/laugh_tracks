@@ -7,4 +7,24 @@ class DirectorsController < ApplicationController
       @directors = Director.filter_by_age(age)
     end
   end
+
+  def new
+    @failed = params[:failed]
+  end
+
+  def create
+    director = Director.new(director_params)
+    creation_result = director.save
+    if creation_result
+      redirect_to "/directors"
+    else
+      redirect_to "/directors/new?failed=true"
+    end
+  end
+
+  private
+
+  def director_params
+    params.require(:director).permit(:name, :age, :city)
+  end
 end
