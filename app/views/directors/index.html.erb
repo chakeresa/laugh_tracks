@@ -9,11 +9,21 @@
         <p class="card-text"><%= director.age %></p>
         <p class="card-text"><%= director.city %></p>
 
+        <% if director.episodes.count > 0 %>
+          <h6>Episodes:</h6>
+        <% end %>
+
         <% director.episodes.each do |episode| %>
-         <div class="episode-card" id="episode-<%= episode.id %>">
-           <h3><%= episode.title %></h3>
-           <p><%= episode.viewers %> million viewers</p>
-         </div>
+          <div class="card mb-3 episode-card" id="episode-<%= episode.id %>" style="max-width: 540px;">
+            <div class="row no-gutters">
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h7 class="card-title"><%= episode.title %></h7>
+                  <p class="card-text"><%= episode.viewers %> million viewers</p>
+                </div>
+              </div>
+            </div>
+          </div>
         <% end %>
       </div>
     </div>
