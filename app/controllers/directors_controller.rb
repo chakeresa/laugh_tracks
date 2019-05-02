@@ -9,14 +9,17 @@ class DirectorsController < ApplicationController
   end
 
   def new
+    @failed = params[:failed]
   end
 
   def create
     director = Director.new(director_params)
-    # TO DO: add if below to throw error if unsuccessful
-    director.save
-
-    redirect_to "/directors"
+    creation_result = director.save
+    if creation_result
+      redirect_to "/directors"
+    else
+      redirect_to "/directors/new?failed=true"
+    end
   end
 
   private
