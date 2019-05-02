@@ -2,7 +2,7 @@
   <p>Failed to create new director. Try again.</p>
 <% end %>
 
-<%= form_for Director.new do |f| %>
+<%= form_for @director do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <br>

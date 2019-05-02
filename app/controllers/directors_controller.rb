@@ -9,6 +9,7 @@ class DirectorsController < ApplicationController
   end
 
   def new
+    @director = Director.new
     @failed = params[:failed]
   end
 
