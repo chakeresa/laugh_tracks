@@ -1,5 +1,10 @@
 class DirectorsController < ApplicationController
   def index
-    @directors = Director.all
+    age = params[:age]
+    if age.nil?
+      @directors = Director.all
+    else
+      @directors = Director.filter_by_age(age)
+    end
   end
 end
