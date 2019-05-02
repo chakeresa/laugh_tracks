@@ -11,9 +11,9 @@ RSpec.describe "directors new page", type: :feature do
     new_director = Director.last
 
     expect(current_path).to eq("/directors")
-    expect(page).to have_content("Bob")
-    expect(page).to have_content(34)
-    expect(page).to have_content("Hobbiton")
+    expect(page).to have_content(new_director.name)
+    expect(page).to have_content(new_director.age)
+    expect(page).to have_content(new_director.city)
   end
 
   it "new director page reloads if invalid input" do
@@ -21,8 +21,6 @@ RSpec.describe "directors new page", type: :feature do
     fill_in "Name", with: "Bob"
     fill_in "Age", with: 34
     click_on "Create Director"
-
-    new_director = Director.last
 
     expect(current_path).to eq("/directors/new")
     expect(page).to have_content("Failed to create new director. Try again.")
