@@ -10,12 +10,13 @@ RSpec.describe "directors index page statistics", type: :feature do
     @eps_3 = @dir_2.episodes.create(title: "Black Water Bay", viewers: 9)
   end
 
-  it "user can see all directors" do
+  it "user can see average age and list of all cities" do
     visit "/directors"
 
     within "#statistics" do
       expect(page).to have_content("Statistics")
       expect(page).to have_content("Average age: 41")
+      expect(page).to have_content("All cities: Chicago, IL Los Angeles, CA")
     end
 
     # In that 'Statistics' area, I see the following information:

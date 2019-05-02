@@ -6,6 +6,8 @@ class DirectorsController < ApplicationController
     else
       @directors = Director.filter_by_age(age)
     end
+    @director_count = @directors.count
+    @director_avg_age = @directors.avg_age
   end
 
   def new

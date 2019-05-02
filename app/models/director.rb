@@ -13,4 +13,8 @@ class Director < ApplicationRecord
   def episode_count
     episodes.count
   end
+
+  def self.avg_age
+    average(:age)
+  end
 end
