@@ -9,4 +9,8 @@ class Director < ApplicationRecord
   def self.filter_by_age(age)
     self.all.where(age: age.to_i)
   end
+
+  def episode_count
+    episodes.count
+  end
 end
