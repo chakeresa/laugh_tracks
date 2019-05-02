@@ -2,6 +2,13 @@
   <h1>Game of Thrones - Directors</h1>
 </header>
 
+<% if @directors.count == 0 %>
+ <div id="no-directors-found">
+   <p>No directors found with those criteria.</p>
+   <%= link_to "Back to all directors", "/directors"%>
+ </div>
+<% end %>
+
 <div class="card-deck">
   <% @directors.each do |director| %>
     <div class="card director-card" id="director-<%= director.id %>">
