@@ -14,8 +14,30 @@
  *= require_self
  */
 
-.director-thumbnail {
-  max-width: 150px;
+
+body {
+  background-color: #423337;
 }
 
+.card-deck {
+  padding: 15px;
+}
 
+.director-card {
+  min-width: 300px
+}
+
+h1 {
+  padding: 10px;
+  color: white;
+  background-color: #600b22;
+}
+
+.episode-label {
+  text-decoration: underline;
+}
+
+.col-md-8 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
