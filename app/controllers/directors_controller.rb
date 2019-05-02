@@ -7,4 +7,8 @@ class DirectorsController < ApplicationController
       @directors = Director.filter_by_age(age)
     end
   end
+
+  def new
+    #code
+  end
 end
