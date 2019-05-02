@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "directors index page", type: :feature do
-  describe "main" do 
+  describe "main" do
     before(:each) do
       @dir_1 = Director.create(name: "Bob Director", age: 50, city: "Chicago, IL", thumbnail: "https://resizing.flixster.com/QznwomaCPPn2qLY4qGQhpkkv95s=/679x605/v1.cjs0MzE2MjtqOzE4MDQ1OzEyMDA7Njc5OzYwNQ")
       @dir_2 = Director.create(name: "Susan Blah", age: 42, city: "Los Angeles, CA", thumbnail: "https://thefilmstage.com/wp-content/uploads/2012/02/Brian-Kirk-to-Direct-Thor-2-300x218.jpg")
@@ -100,32 +100,4 @@ RSpec.describe "directors index page", type: :feature do
       expect(page).to have_link("Back to all directors")
     end
   end
-
-
-
-  # User Story 7
-  #
-  # As a visitor
-  # When I visit `/comedians`
-  # Then I see an area at the top of the page called 'Statistics'
-  # In that 'Statistics' area, I see the following information:
-  # - the average age of all comedians on the page (if the page is filtered for specific comedians, the statistics should reflect the new group)
-  # - a unique list of cities for each comedian on the page
-  #
-  # Averaging and uniqueness should be done in ActiveRecord NOT
-  # using Ruby
-
-
-  # User Story 8
-  #
-  # As a visitor
-  # When I visit `/comedians?age=34`
-  # Then I see a list of all comedians with an age of 34
-  # Just like a previous User Story, BUT all other statistics
-  # information in the 'Statistics' area of the page should be limited
-  # to reflect only the information about the comedians listed on
-  # the page.
-  #
-  # - Testing should ensure that calculated statistics are
-  #   correct for a limited subset of data
 end
