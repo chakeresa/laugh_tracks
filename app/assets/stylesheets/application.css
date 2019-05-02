@@ -41,3 +41,8 @@ h1 {
   flex: 0 0 100%;
   max-width: 100%;
 }
+
+#no-directors-found {
+  color: #ce8923;
+  padding: 10px;
+}
