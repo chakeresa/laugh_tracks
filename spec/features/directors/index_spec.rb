@@ -54,6 +54,16 @@ RSpec.describe "directors index page", type: :feature do
     end
   end
 
+  # User Story 4
+  #
+  # As a visitor
+  # When I visit `/comedians?age=34`
+  # Then I see the list of comedians on the page only shows
+  # comedians who match the age criteria.
+  #
+  # - All other information on the page is still expected to be present
+  # - Testing should check that excluded comedians do not show up.
+
   it "user can see episode count for each director" do
     visit "/directors"
 
@@ -69,52 +79,41 @@ RSpec.describe "directors index page", type: :feature do
       expect(page).to have_no_content("Episodes")
     end
   end
+
+  # User Story 6
+  #
+  # As a visitor
+  # When I visit `/comedians/new`
+  # Then I see a form to input a new comedian into the database
+  # Including fields for their name, age and city.
+  # When the form is successfully submitted and saved,
+  # Then I am redirected to `/comedians`
+  # And I see the new comedian's data on the page.
+
+
+  # User Story 7
+  #
+  # As a visitor
+  # When I visit `/comedians`
+  # Then I see an area at the top of the page called 'Statistics'
+  # In that 'Statistics' area, I see the following information:
+  # - the average age of all comedians on the page (if the page is filtered for specific comedians, the statistics should reflect the new group)
+  # - a unique list of cities for each comedian on the page
+  #
+  # Averaging and uniqueness should be done in ActiveRecord NOT
+  # using Ruby
+
+
+  # User Story 8
+  #
+  # As a visitor
+  # When I visit `/comedians?age=34`
+  # Then I see a list of all comedians with an age of 34
+  # Just like a previous User Story, BUT all other statistics
+  # information in the 'Statistics' area of the page should be limited
+  # to reflect only the information about the comedians listed on
+  # the page.
+  #
+  # - Testing should ensure that calculated statistics are
+  #   correct for a limited subset of data
 end
-
-# User Story 4
-#
-# As a visitor
-# When I visit `/comedians?age=34`
-# Then I see the list of comedians on the page only shows
-# comedians who match the age criteria.
-#
-# - All other information on the page is still expected to be present
-# - Testing should check that excluded comedians do not show up.
-
-
-# User Story 6
-#
-# As a visitor
-# When I visit `/comedians/new`
-# Then I see a form to input a new comedian into the database
-# Including fields for their name, age and city.
-# When the form is successfully submitted and saved,
-# Then I am redirected to `/comedians`
-# And I see the new comedian's data on the page.
-
-
-# User Story 7
-#
-# As a visitor
-# When I visit `/comedians`
-# Then I see an area at the top of the page called 'Statistics'
-# In that 'Statistics' area, I see the following information:
-# - the average age of all comedians on the page (if the page is filtered for specific comedians, the statistics should reflect the new group)
-# - a unique list of cities for each comedian on the page
-#
-# Averaging and uniqueness should be done in ActiveRecord NOT
-# using Ruby
-
-
-# User Story 8
-#
-# As a visitor
-# When I visit `/comedians?age=34`
-# Then I see a list of all comedians with an age of 34
-# Just like a previous User Story, BUT all other statistics
-# information in the 'Statistics' area of the page should be limited
-# to reflect only the information about the comedians listed on
-# the page.
-#
-# - Testing should ensure that calculated statistics are
-#   correct for a limited subset of data
