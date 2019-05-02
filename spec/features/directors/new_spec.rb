@@ -6,7 +6,7 @@ RSpec.describe "directors new page", type: :feature do
     fill_in "Name", with: "Bob"
     fill_in "Age", with: 34
     fill_in "City", with: "Hobbiton"
-    click_on "Add Director"
+    click_on "Create Director"
 
     new_director = Director.last
 
