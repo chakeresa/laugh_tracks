@@ -3,4 +3,5 @@ Rails.application.routes.draw do
 
   get '/directors', to: 'directors#index'
   get '/directors/new', to: 'directors#new'
+  post '/directors', to: 'directors#create'
 end

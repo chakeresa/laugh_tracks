@@ -10,7 +10,7 @@ RSpec.describe "directors new page", type: :feature do
 
     new_director = Director.last
 
-    expect(current_path).to eq("directors")
+    expect(current_path).to eq("/directors")
     expect(page).to have_content("Bob")
     expect(page).to have_content(34)
     expect(page).to have_content("Hobbiton")
