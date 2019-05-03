@@ -8,7 +8,7 @@
 <% if @director_count > 0 %>
  <div id="statistics">
    <h2>Statistics</h2>
-   <p>Average age: <%= @director_avg_age.round(0) %></p>
+   <p>Average age: <%= @director_avg_age.round(0).to_i %></p>
    <p>All cities:
      <% @all_director_cities.each do |city| %>
       <%= " #{city}#{";" if city != @all_director_cities.last}" %>
