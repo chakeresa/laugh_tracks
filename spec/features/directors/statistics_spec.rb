@@ -19,20 +19,20 @@ RSpec.describe "directors index page statistics", type: :feature do
 
       expect(page).to have_content("Statistics")
       expect(page).to have_content("Average age: #{avg_age}")
-      expect(page).to have_content("All cities: Chicago, IL Los Angeles, CA")
-      expect(page).to_not have_content("Los Angeles, CA Los Angeles, CA")
+      expect(page).to have_content("All cities: Chicago, IL; Los Angeles, CA")
+      expect(page).to_not have_content("Los Angeles, CA; Los Angeles, CA")
     end
   end
 
-  describe "when filtering by age"
-    it "user can see average age and list of all cities" do
+  describe "when filtering by age" do
+    it "user can see age and list of all (filtered) cities" do
       visit "/directors?age=42"
 
       within "#statistics" do
         expect(page).to have_content("Statistics")
         expect(page).to have_content("Average age: 42")
-        expect(page).to have_content("All cities: Chicago, IL Los Angeles, CA")
-        expect(page).to_not have_content("Los Angeles, CA Los Angeles, CA")
+        expect(page).to have_content("All cities: Chicago, IL; Los Angeles, CA")
+        expect(page).to_not have_content("Los Angeles, CA; Los Angeles, CA")
       end
     end
   end

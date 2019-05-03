@@ -17,4 +17,8 @@ class Director < ApplicationRecord
   def self.avg_age
     average(:age)
   end
+
+  def self.all_uniq_cities
+    distinct.pluck(:city).sort
+  end
 end
