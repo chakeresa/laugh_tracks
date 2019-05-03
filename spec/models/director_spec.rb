@@ -6,6 +6,8 @@ RSpec.describe Director, type: :model do
     # TO DO: below - change to birth_year and calculate the age
     it {should validate_presence_of :age}
     it {should validate_presence_of :city}
+
+    it {should validate_numericality_of(:age).only_integer}
   end
 
   describe "relationships" do
@@ -29,6 +31,14 @@ RSpec.describe Director, type: :model do
       expect(Director.filter_by_age(42)).to_not include(@dir_3)
 
       expect(Director.filter_by_age("zebra").count).to eq(0)
+    end
+
+    it "calculates average director age" do
+      Director.create(name: "Don't Add Me", age: "zebra", city: "Los Angeles, CA")
+
+      avg_age = ((@dir_1.age + @dir_2.age + @dir_3.age + @dir_4.age).to_f / 4).round(0)
+
+      expect(Director.avg_age).to eq(avg_age)
     end
   end
 end
