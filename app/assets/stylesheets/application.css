@@ -19,6 +19,19 @@ body {
   background-color: #423337;
 }
 
+form {
+  background-color: #c4c4c4;
+}
+
+.form-group {
+  padding: 10px;
+}
+
+.btn-primary {
+  background-color: #600b22;
+  border-color: #600b22;
+}
+
 .card-deck {
   padding: 15px;
 }

@@ -3,14 +3,24 @@
 <% end %>
 
 <%= form_for @director do |f| %>
+  <% f.options[:html][:class] += ' form-group' %>
   <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name, class: 'form-control' %>
+  <small class="form-text text-muted">
+    (Required)
+  </small>
   <br>
   <%= f.label :age %>
-  <%= f.text_field :age %>
+  <%= f.text_field :age, class: 'form-control' %>
+  <small class="form-text text-muted">
+    (Required. Please enter a whole number.)
+  </small>
   <br>
   <%= f.label :city %>
-  <%= f.text_field :city %>
+  <%= f.text_field :city, class: 'form-control' %>
+  <small class="form-text text-muted">
+    (Required)
+  </small>
   <br>
-  <%= f.submit %>
+  <%= f.submit class: 'btn-primary btn-lg btn-block' %>
 <% end %>
