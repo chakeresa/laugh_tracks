@@ -6,7 +6,21 @@ class Director < ApplicationRecord
   validates_presence_of :age
   validates_presence_of :city
 
+  validates :age, numericality: { only_integer: true }
+
   def self.filter_by_age(age)
     self.all.where(age: age.to_i)
+  end
+
+  def self.avg_age
+    average(:age)
+  end
+
+  def self.all_uniq_cities
+    distinct.pluck(:city).sort
+  end
+
+  def episode_count
+    episodes.count
   end
 end

@@ -1,7 +1,19 @@
-<% if @directors.count == 0 %>
+<% if @director_count == 0 %>
  <div id="no-directors-found">
    <p>No directors found with those criteria.</p>
-   <%= link_to "Back to all directors", "/directors"%>
+   <%= link_to "Back to all directors", "/directors" %>
+ </div>
+<% end %>
+
+<% if @director_count > 0 %>
+ <div id="statistics">
+   <h2>Statistics</h2>
+   <p>Average age: <%= @director_avg_age.round(0).to_i %></p>
+   <p>All cities:
+     <% @all_director_cities.each do |city| %>
+      <%= " #{city}#{";" if city != @all_director_cities.last}" %>
+     <% end %>
+   </p>
  </div>
 <% end %>
 
@@ -14,8 +26,8 @@
         <p class="card-text"><%= director.age %></p>
         <p class="card-text"><%= director.city %></p>
 
-        <% if director.episodes.count > 0 %>
-          <h5 class="episode-label">Episodes (<%= director.episodes.count %>):</h5>
+        <% if director.episode_count > 0 %>
+          <h5 class="episode-label">Episodes (<%= director.episode_count %>):</h5>
         <% end %>
 
         <% director.episodes.each do |episode| %>
