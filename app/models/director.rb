@@ -2,18 +2,18 @@ class Director < ApplicationRecord
   has_many :episodes
 
   validates_presence_of :name
-  # TO DO: below - change to birth_year and calculate the age
-  validates_presence_of :age
+  validates_presence_of :birth_year
   validates_presence_of :city
 
-  validates :age, numericality: { only_integer: true }
+  validates :birth_year, numericality: { only_integer: true }
 
   def self.filter_by_age(age)
-    self.all.where(age: age.to_i)
+    birth_year_to_find = Time.now.year - age.to_i
+    self.all.where(birth_year: birth_year_to_find.to_i)
   end
 
   def self.avg_age
-    average(:age)
+     Time.now.year - average(:birth_year)
   end
 
   def self.all_uniq_cities
@@ -21,8 +21,11 @@ class Director < ApplicationRecord
   end
 
   def age
-    current_year = Time.now.year
-    birth_year - current_year
+    if birth_year.nil?
+      nil
+    else
+      Time.now.year - birth_year
+    end
   end
 
   def episode_count

@@ -25,8 +25,7 @@ RSpec.describe Director, type: :model do
     end
 
     it "filters directors by age" do
-      current_year = Time.now.year
-      age_to_find = 1967 - current_year
+      age_to_find = Time.now.year - 1967
       expect(Director.filter_by_age(age_to_find).count).to eq(3)
       expect(Director.filter_by_age(age_to_find)).to include(@dir_4)
       expect(Director.filter_by_age(age_to_find)).to_not include(@dir_3)
@@ -39,7 +38,7 @@ RSpec.describe Director, type: :model do
 
       avg_age = ((@dir_1.age + @dir_2.age + @dir_3.age + @dir_4.age).to_f / 4).round(0)
 
-      expect(Director.avg_age).to eq(avg_age)
+      expect(Director.avg_age).to be_within(0.5).of(avg_age)
     end
 
     it "lists all cities" do
@@ -50,9 +49,8 @@ RSpec.describe Director, type: :model do
   describe "instance methods" do
     it "calculates age" do
       dir_1 = Director.create!(name: "Bob Director", birth_year: 2009, city: "Chicago, IL")
-      current_year = Time.now.year
 
-      expect(dir_1.age).to eq(dir_1.birth_year - current_year)
+      expect(dir_1.age).to eq(Time.now.year - dir_1.birth_year)
     end
 
     it "gives total episode count" do
