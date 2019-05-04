@@ -20,6 +20,11 @@ class Director < ApplicationRecord
     distinct.pluck(:city).sort
   end
 
+  def age
+    current_year = Time.now.year
+    birth_year - current_year
+  end
+
   def episode_count
     episodes.count
   end
