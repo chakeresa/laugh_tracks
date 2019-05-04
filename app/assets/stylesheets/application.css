@@ -64,3 +64,8 @@ h1 {
   background-color: #c4c4c4;
   padding: 10px;
 }
+
+#failed-to-create {
+  color: white;
+  padding: 10px;
+}
