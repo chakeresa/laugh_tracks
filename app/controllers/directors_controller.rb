@@ -18,8 +18,7 @@ class DirectorsController < ApplicationController
 
   def create
     director = Director.new(director_params)
-    creation_result = director.save
-    if creation_result
+    if director.save
       redirect_to "/directors"
     else
       redirect_to "/directors/new?failed=true"
@@ -29,6 +28,6 @@ class DirectorsController < ApplicationController
   private
 
   def director_params
-    params.require(:director).permit(:name, :age, :city)
+    params.require(:director).permit(:name, :birth_year, :city)
   end
 end
