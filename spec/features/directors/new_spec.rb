@@ -4,7 +4,7 @@ RSpec.describe "directors new page", type: :feature do
   it "user can create a new director" do
     visit "/directors/new"
     fill_in "Name", with: "Bob"
-    fill_in "Age", with: 34
+    fill_in "Birth year", with: 1985
     fill_in "City", with: "Hobbiton"
     click_on "Create Director"
 
@@ -19,7 +19,7 @@ RSpec.describe "directors new page", type: :feature do
   it "new director page reloads if invalid input" do
     visit "/directors/new"
     fill_in "Name", with: "Bob"
-    fill_in "Age", with: 34
+    fill_in "Birth year", with: 1985
     click_on "Create Director"
 
     expect(current_path).to eq("/directors/new")

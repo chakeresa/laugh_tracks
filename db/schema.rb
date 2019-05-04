@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190501215820) do
+ActiveRecord::Schema.define(version: 20190504030506) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "directors", force: :cascade do |t|
     t.string "name"
-    t.integer "age"
+    t.integer "birth_year"
     t.string "city"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
