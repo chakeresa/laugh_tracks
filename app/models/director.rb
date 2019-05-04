@@ -13,7 +13,11 @@ class Director < ApplicationRecord
   end
 
   def self.avg_age
-     Time.now.year - average(:birth_year)
+    if count == 0
+      "N/A"
+    else
+      Time.now.year - average(:birth_year)
+    end
   end
 
   def self.all_uniq_cities

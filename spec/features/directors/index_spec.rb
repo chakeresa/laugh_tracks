@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe "directors index page", type: :feature do
   describe "main" do
     before(:each) do
-      @dir_1 = Director.create(name: "Bob Director", age: 50, city: "Chicago, IL", thumbnail: "https://resizing.flixster.com/QznwomaCPPn2qLY4qGQhpkkv95s=/679x605/v1.cjs0MzE2MjtqOzE4MDQ1OzEyMDA7Njc5OzYwNQ")
-      @dir_2 = Director.create(name: "Susan Blah", age: 42, city: "Los Angeles, CA", thumbnail: "https://thefilmstage.com/wp-content/uploads/2012/02/Brian-Kirk-to-Direct-Thor-2-300x218.jpg")
-      @dir_3 = Director.create(name: "Mike McDonald", age: 50, city: "Los Angeles, CA", thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Alan_Taylor_2013_crop.jpg/440px-Alan_Taylor_2013_crop.jpg")
+      @dir_1 = Director.create(name: "Bob Director", birth_year: 1969, city: "Chicago, IL", thumbnail: "https://resizing.flixster.com/QznwomaCPPn2qLY4qGQhpkkv95s=/679x605/v1.cjs0MzE2MjtqOzE4MDQ1OzEyMDA7Njc5OzYwNQ")
+      @dir_2 = Director.create(name: "Susan Blah", birth_year: 1977, city: "Los Angeles, CA", thumbnail: "https://thefilmstage.com/wp-content/uploads/2012/02/Brian-Kirk-to-Direct-Thor-2-300x218.jpg")
+      @dir_3 = Director.create(name: "Mike McDonald", birth_year: 1969, city: "Los Angeles, CA", thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Alan_Taylor_2013_crop.jpg/440px-Alan_Taylor_2013_crop.jpg")
       @eps_1 = @dir_1.episodes.create(title: "The Red Wedding", viewers: 10)
       @eps_2 = @dir_1.episodes.create(title: "Battle of the Bastards", viewers: 12)
       @eps_3 = @dir_2.episodes.create(title: "Black Water Bay", viewers: 9)
@@ -77,9 +77,9 @@ RSpec.describe "directors index page", type: :feature do
       Episode.destroy_all
       Director.destroy_all
 
-      @dir_4 = Director.create(name: "Bob Director", age: 50, city: "Chicago, IL", thumbnail: "https://resizing.flixster.com/QznwomaCPPn2qLY4qGQhpkkv95s=/679x605/v1.cjs0MzE2MjtqOzE4MDQ1OzEyMDA7Njc5OzYwNQ")
-      @dir_5 = Director.create(name: "Susan Blah", age: 42, city: "Los Angeles, CA", thumbnail: "https://thefilmstage.com/wp-content/uploads/2012/02/Brian-Kirk-to-Direct-Thor-2-300x218.jpg")
-      @dir_6 = Director.create(name: "Mike McDonald", age: 50, city: "Los Angeles, CA", thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Alan_Taylor_2013_crop.jpg/440px-Alan_Taylor_2013_crop.jpg")
+      @dir_4 = Director.create!(name: "Bob Director", birth_year: 1969, city: "Chicago, IL", thumbnail: "https://resizing.flixster.com/QznwomaCPPn2qLY4qGQhpkkv95s=/679x605/v1.cjs0MzE2MjtqOzE4MDQ1OzEyMDA7Njc5OzYwNQ")
+      @dir_5 = Director.create!(name: "Susan Blah", birth_year: 1977, city: "Los Angeles, CA", thumbnail: "https://thefilmstage.com/wp-content/uploads/2012/02/Brian-Kirk-to-Direct-Thor-2-300x218.jpg")
+      @dir_6 = Director.create!(name: "Mike McDonald", birth_year: 1969, city: "Los Angeles, CA", thumbnail: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Alan_Taylor_2013_crop.jpg/440px-Alan_Taylor_2013_crop.jpg")
     end
 
     it "user can filter to directors with only a spec'd age" do
