@@ -34,6 +34,10 @@ h1 {
   padding: 10px;
 }
 
+nav {
+  background-color: c4c4c4;
+}
+
 .form-group {
   padding: 10px;
 }
