@@ -17,6 +17,7 @@
 
 body {
   background-color: #423337;
+  font-family: Optima, sans-serif;
 }
 
 form {
@@ -37,13 +38,17 @@ form {
 }
 
 .director-card {
-  min-width: 300px
+  min-width: 300px;
 }
 
 h1 {
-  padding: 10px;
   color: white;
   background-color: #600b22;
+  padding: 10px;
+}
+
+h2 {
+  color: white;
 }
 
 .episode-label {
@@ -67,5 +72,13 @@ h1 {
 
 #failed-to-create {
   color: white;
+  padding: 10px;
+}
+
+#back-to-main {
+  padding: 10px;
+}
+
+#new-director-header {
   padding: 10px;
 }

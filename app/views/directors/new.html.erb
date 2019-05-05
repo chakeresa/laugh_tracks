@@ -1,3 +1,7 @@
+<div id="new-director-header">
+  <h2>Add a director:</h2>
+</div>
+
 <% if @failed %>
   <p id="failed-to-create">Failed to create new director. Try again.</p>
 <% end %>
@@ -24,3 +28,6 @@
   <br>
   <%= f.submit class: 'btn-primary btn-lg btn-block' %>
 <% end %>
+<div id="back-to-main">
+  <a href="/directors">Back to main</a>
+</div>
