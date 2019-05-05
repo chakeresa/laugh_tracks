@@ -44,6 +44,10 @@ RSpec.describe Director, type: :model do
     it "lists all cities" do
       expect(Director.all_uniq_cities).to eq(["Aaa", "Chicago, IL", "Los Angeles, CA"])
     end
+
+    it "counts all episodes" do
+      expect(Director.episode_count).to eq(3)
+    end
   end
 
   describe "instance methods" do

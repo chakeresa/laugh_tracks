@@ -24,6 +24,10 @@ class Director < ApplicationRecord
     distinct.pluck(:city).sort
   end
 
+  def self.episode_count
+    joins(:episodes).count
+  end
+
   def age
     if birth_year.nil?
       nil
