@@ -24,6 +24,16 @@ form {
   background-color: #c4c4c4;
 }
 
+a {
+  padding: 10px;
+}
+
+h1 {
+  color: white;
+  background-color: #600b22;
+  padding: 10px;
+}
+
 .form-group {
   padding: 10px;
 }
@@ -39,16 +49,6 @@ form {
 
 .director-card {
   min-width: 300px;
-}
-
-h1 {
-  color: white;
-  background-color: #600b22;
-  padding: 10px;
-}
-
-h2 {
-  color: white;
 }
 
 .episode-label {
@@ -75,10 +75,7 @@ h2 {
   padding: 10px;
 }
 
-#back-to-main {
-  padding: 10px;
-}
-
 #new-director-header {
   padding: 10px;
+  color: white;
 }

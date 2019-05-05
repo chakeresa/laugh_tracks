@@ -17,6 +17,9 @@
  </div>
 <% end %>
 
+<br>
+<a id="add-director-link" href="/directors/new">Add a director</a>
+
 <div class="card-deck">
   <% @directors.each do |director| %>
     <div class="card director-card" id="director-<%= director.id %>">
