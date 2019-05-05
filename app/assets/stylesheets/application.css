@@ -17,10 +17,25 @@
 
 body {
   background-color: #423337;
+  font-family: Optima, sans-serif;
 }
 
 form {
   background-color: #c4c4c4;
+}
+
+a {
+  padding: 10px;
+}
+
+h1 {
+  color: white;
+  background-color: #600b22;
+  padding: 10px;
+}
+
+nav {
+  background-color: c4c4c4;
 }
 
 .form-group {
@@ -37,13 +52,7 @@ form {
 }
 
 .director-card {
-  min-width: 300px
-}
-
-h1 {
-  padding: 10px;
-  color: white;
-  background-color: #600b22;
+  min-width: 300px;
 }
 
 .episode-label {
@@ -68,4 +77,9 @@ h1 {
 #failed-to-create {
   color: white;
   padding: 10px;
+}
+
+#new-director-header {
+  padding: 10px;
+  color: white;
 }

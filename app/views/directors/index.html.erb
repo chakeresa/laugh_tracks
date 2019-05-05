@@ -1,6 +1,14 @@
+<%= form_tag("/directors", method: "get") do %>
+  <%= link_to "Show all directors", "/directors" %> •
+  <a id="add-director-link" href="/directors/new">Add a director</a> •
+  <%= label_tag(:age, "See all directors by age:") %>
+  <%= text_field_tag(:age) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
 <% if @director_count == 0 %>
- <div id="no-directors-found">
-   <p>No directors found with those criteria.</p>
+ <div>
+   <p id="no-directors-found">No directors found with those criteria.</p>
    <%= link_to "Back to all directors", "/directors" %>
  </div>
 <% end %>
