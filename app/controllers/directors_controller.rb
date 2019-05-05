@@ -9,6 +9,7 @@ class DirectorsController < ApplicationController
     @director_count = @directors.count
     @director_avg_age = @directors.avg_age
     @all_director_cities = @directors.all_uniq_cities
+    @episode_count = @directors.episode_count
   end
 
   def new
