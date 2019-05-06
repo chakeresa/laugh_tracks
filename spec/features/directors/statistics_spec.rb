@@ -32,6 +32,15 @@ RSpec.describe "directors index page statistics", type: :feature do
     end
   end
 
+  it "user can see avg viewers per episode" do
+    visit "/directors"
+
+    within "#statistics" do
+      avg_expected = (@eps_1.viewers + @eps_2.viewers + @eps_3.viewers).to_f / 3
+      expect(page).to have_content("Average viewers per episode: #{avg_expected.round(1)} million")
+    end
+  end
+
   describe "when filtering by age" do
     it "user can see age and list of all (filtered) cities" do
       visit "/directors?age=#{@dir_1.age}"

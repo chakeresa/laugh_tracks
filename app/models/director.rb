@@ -28,6 +28,10 @@ class Director < ApplicationRecord
     joins(:episodes).count
   end
 
+  def self.avg_viewers
+    joins(:episodes).average(:viewers)
+  end
+
   def age
     if birth_year.nil?
       nil

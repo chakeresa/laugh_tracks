@@ -48,6 +48,11 @@ RSpec.describe Director, type: :model do
     it "counts all episodes" do
       expect(Director.episode_count).to eq(3)
     end
+
+    it "calculates average viewers per episode" do
+      avg_expected = (@eps_1.viewers + @eps_2.viewers + @eps_3.viewers).to_f / 3
+      expect(Director.avg_viewers).to be_within(0.5).of(avg_expected)
+    end
   end
 
   describe "instance methods" do

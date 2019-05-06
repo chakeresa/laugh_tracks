@@ -10,6 +10,11 @@ class DirectorsController < ApplicationController
     @director_avg_age = @directors.avg_age
     @all_director_cities = @directors.all_uniq_cities
     @episode_count = @directors.episode_count
+    # if @director_count > 0
+      @avg_viewers = @directors.avg_viewers
+    # else
+    #   @avg_viewers = 0
+    # end
   end
 
   def new
