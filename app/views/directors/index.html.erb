@@ -17,6 +17,10 @@
  <div id="statistics">
    <h2>Statistics</h2>
    <p>Average age: <%= @director_avg_age.round(0).to_i %></p>
+   <p>Total episode count: <%= @episode_count %></p>
+   <% if @episode_count > 0 %>
+     <p>Average viewers per episode: <%= @avg_viewers.round(1) %> million</p>
+   <% end %>
    <p>All cities:
      <% @all_director_cities.each do |city| %>
       <%= " #{city}#{";" if city != @all_director_cities.last}" %>
@@ -28,10 +32,12 @@
 <div class="card-deck">
   <% @directors.each do |director| %>
     <div class="card director-card" id="director-<%= director.id %>">
-      <img src="<%= director.thumbnail %>" class="card-img-top director-thumbnail" alt="<%= director.name %> thumbnail">
+      <% if !director.thumbnail.nil? %>
+        <img src="<%= director.thumbnail %>" class="card-img-top director-thumbnail" alt="<%= director.name %> thumbnail">
+      <% end %>
       <div class="card-body">
         <h3 class="card-title"><%= director.name %></h3>
-        <p class="card-text"><%= director.age %></p>
+        <p class="card-text">Age: <%= director.age %></p>
         <p class="card-text"><%= director.city %></p>
 
         <% if director.episode_count > 0 %>

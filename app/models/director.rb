@@ -21,7 +21,15 @@ class Director < ApplicationRecord
   end
 
   def self.all_uniq_cities
-    distinct.pluck(:city).sort
+    pluck(:city).uniq.sort
+  end
+
+  def self.episode_count
+    joins(:episodes).count
+  end
+
+  def self.avg_viewers
+    joins(:episodes).average(:viewers)
   end
 
   def age
