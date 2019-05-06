@@ -21,7 +21,7 @@ class Director < ApplicationRecord
   end
 
   def self.all_uniq_cities
-    distinct.pluck(:city).sort
+    pluck(:city).uniq.sort
   end
 
   def self.episode_count

@@ -6,15 +6,16 @@ class DirectorsController < ApplicationController
     else
       @directors = Director.filter_by_age(age)
     end
+    sortable = ["age", "city", "name"]
+    if sortable.include?(params[:sort])
+      params[:sort] == "age" ? sort_by = "birth_year" : sort_by = params[:sort]
+      @directors = @directors.order(sort_by.to_sym)
+    end
     @director_count = @directors.count
     @director_avg_age = @directors.avg_age
     @all_director_cities = @directors.all_uniq_cities
     @episode_count = @directors.episode_count
-    # if @director_count > 0
-      @avg_viewers = @directors.avg_viewers
-    # else
-    #   @avg_viewers = 0
-    # end
+    @avg_viewers = @directors.avg_viewers
   end
 
   def new

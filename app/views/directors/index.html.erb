@@ -32,10 +32,12 @@
 <div class="card-deck">
   <% @directors.each do |director| %>
     <div class="card director-card" id="director-<%= director.id %>">
-      <img src="<%= director.thumbnail %>" class="card-img-top director-thumbnail" alt="<%= director.name %> thumbnail">
+      <% if !director.thumbnail.nil? %>
+        <img src="<%= director.thumbnail %>" class="card-img-top director-thumbnail" alt="<%= director.name %> thumbnail">
+      <% end %>
       <div class="card-body">
         <h3 class="card-title"><%= director.name %></h3>
-        <p class="card-text"><%= director.age %></p>
+        <p class="card-text">Age: <%= director.age %></p>
         <p class="card-text"><%= director.city %></p>
 
         <% if director.episode_count > 0 %>
