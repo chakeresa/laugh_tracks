@@ -47,12 +47,13 @@ nav {
   border-color: #600b22;
 }
 
-.card-deck {
+.card-deck, .row {
   padding: 15px;
 }
 
 .director-card {
   min-width: 300px;
+  height: 100%;
 }
 
 .episode-label {

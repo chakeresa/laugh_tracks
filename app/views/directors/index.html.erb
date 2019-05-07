@@ -29,34 +29,36 @@
  </div>
 <% end %>
 
-<div class="card-deck">
+<div class="album row">
   <% @directors.each do |director| %>
-    <div class="card director-card" id="director-<%= director.id %>">
-      <% if !director.thumbnail.nil? %>
-        <img src="<%= director.thumbnail %>" class="card-img-top director-thumbnail" alt="<%= director.name %> thumbnail">
-      <% end %>
-      <div class="card-body">
-        <h3 class="card-title"><%= director.name %></h3>
-        <p class="card-text">Age: <%= director.age %></p>
-        <p class="card-text"><%= director.city %></p>
-
-        <% if director.episode_count > 0 %>
-          <h5 class="episode-label">Episodes (<%= director.episode_count %>):</h5>
+    <div class="col-md-4">
+      <div class="card director-card" id="director-<%= director.id %>">
+        <% if !director.thumbnail.nil? %>
+          <img src="<%= director.thumbnail %>" class="card-img-top director-thumbnail" alt="<%= director.name %> thumbnail">
         <% end %>
+        <div class="card-body">
+          <h3 class="card-title"><%= director.name %></h3>
+          <p class="card-text">Age: <%= director.age %></p>
+          <p class="card-text"><%= director.city %></p>
 
-        <% director.episodes.each do |episode| %>
-          <div class="card mb-3 episode-card" id="episode-<%= episode.id %>" style="max-width: 540px;">
-            <div class="row no-gutters">
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h6 class="card-title"><%= episode.title %></h6>
-                  <p class="card-text"><%= episode.viewers %> million viewers</p>
+          <% if director.episode_count > 0 %>
+            <h5 class="episode-label">Episodes (<%= director.episode_count %>):</h5>
+          <% end %>
+
+          <% director.episodes.each do |episode| %>
+            <div class="card mb-3 episode-card" id="episode-<%= episode.id %>" style="max-width: 540px;">
+              <div class="row no-gutters">
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h6 class="card-title"><%= episode.title %></h6>
+                    <p class="card-text"><%= episode.viewers %> million viewers</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        <% end %>
-      </div>
+          <% end %>
+        </div>
     </div>
+  </div>
   <% end %>
 </div>
