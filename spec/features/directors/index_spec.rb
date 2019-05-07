@@ -74,25 +74,25 @@ RSpec.describe "directors index page", type: :feature do
     it "user can sort the directors by name" do
       visit "/directors?sort=name"
 
-      expect(page).to have_content(@dir_1.name)
-      expect(page).to have_content(@dir_3.name)
-      expect(page).to have_content(@dir_2.name)
+      expect(page.all(".director-card")[0]).to have_content(@dir_1.name)
+      expect(page.all(".director-card")[1]).to have_content(@dir_3.name)
+      expect(page.all(".director-card")[2]).to have_content(@dir_2.name)
     end
 
     it "user can sort the directors by age" do
       visit "/directors?sort=age"
 
-      expect(page).to have_content(@dir_1.name)
-      expect(page).to have_content(@dir_3.name)
-      expect(page).to have_content(@dir_2.name)
+      expect(page.all(".director-card")[0]).to have_content(@dir_1.name)
+      expect(page.all(".director-card")[1]).to have_content(@dir_3.name)
+      expect(page.all(".director-card")[2]).to have_content(@dir_2.name)
     end
 
     it "user can sort the directors by city" do
       visit "/directors?sort=city"
 
-      expect(page).to have_content(@dir_1.name)
-      expect(page).to have_content(@dir_2.name)
-      expect(page).to have_content(@dir_3.name)
+      expect(page.all(".director-card")[0]).to have_content(@dir_1.name)
+      expect(page.all(".director-card")[1]).to have_content(@dir_2.name)
+      expect(page.all(".director-card")[2]).to have_content(@dir_3.name)
     end
   end
 
