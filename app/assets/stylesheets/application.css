@@ -65,6 +65,10 @@ nav {
   max-width: 100%;
 }
 
+.col-md-4 {
+  margin: 15px 0px;
+}
+
 #no-directors-found {
   color: #ce8923;
   padding: 10px;
